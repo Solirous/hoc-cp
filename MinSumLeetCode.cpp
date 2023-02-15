@@ -22,6 +22,11 @@ public:
         for(int i=1;i<nums.size();i++){
             prefix[i]=prefix[i-1]+a[i];
         }
+        if(prefix[nums.size()-1]==target){
+            return nums.size();
+        }
+
+
         int res=INT_MAX;
        for(int i=0;i<nums.size();++i) cout<<prefix[i]<<" ";
         cout<<"\n";
