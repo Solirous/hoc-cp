@@ -25,7 +25,11 @@ public:
         if(prefix[nums.size()-1]==target){
             return nums.size();
         }
-
+       /* for(int i=0;i<nums.size();++i){
+            if(prefix[i]==target){
+                return abs(-(i+1));
+            }
+        }*/
 
         int res=INT_MAX;
        for(int i=0;i<nums.size();++i) cout<<prefix[i]<<" ";
@@ -37,7 +41,11 @@ public:
             }
         }
        // cout<<res<<'\n';
-
+           for(int i=0;i<nums.size();++i){
+               if(prefix[i]==target){
+                    res = min(res,i+1);
+               }
+           }
 
         return (res==INT_MAX?0:res);
     }
